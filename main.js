@@ -4,6 +4,15 @@ import imageStyles from './image.module.css'
 import img from './vite-logo.png'
 import { user } from './data.json'
 
+const modules = import.meta.glob('./modules/*.js')
+
+console.log(modules)
+for (const path in modules) {
+  modules[path]().then((module) => {
+    module.load()
+  })
+}
+
 document.querySelector('#app').innerHTML = `
   <h1>Hello Platzi!</h1>
   <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
