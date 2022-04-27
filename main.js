@@ -3,6 +3,9 @@ import buttonSyles from './button.module.css'
 import imageStyles from './image.module.css'
 import img from './vite-logo.png'
 import { user } from './data.json'
+import suma from './suma.ts'
+
+console.log(`suma 2+3 = ${suma(2, 3)}`)
 
 const modules = import.meta.glob('./modules/*.js')
 
